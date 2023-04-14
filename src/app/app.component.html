@@ -1,20 +1,7 @@
-<h1 class="center">Liste de Pokémons</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col s12 m6 l4" *ngFor="let pokemon of pokemonList">
-      <div class="card">
-        <div class="card-image">
-          <img class="responsive-img" src="{{ pokemon.picture }}" />
-          <span class="card-title">{{ pokemon.name }}</span>
-        </div>
-        <div class="card-content">
-          <p>{{ pokemon.created }}</p>
-        </div>
-        <div class="card-action">
-          <a href="#">View</a>
-        </div>
-      </div>
-    </div>
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="#" class="brand-logo center"> Pokédex </a>
   </div>
-</div>
+</nav>
+
+<router-outlet></router-outlet>
