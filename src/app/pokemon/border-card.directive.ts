@@ -4,8 +4,8 @@ import { Directive, ElementRef, HostListener, Input } from "@angular/core";
   selector: "[pkmnBorderCard]",
 })
 export class BorderCardDirective {
-  private initialColor: "#f5f5f5";
-  private defaultColor: "#009688";
+  private initialColor = "#f5f5f5";
+  private defaultColor = "#009688";
   private defaultHeight: 180;
 
   constructor(private el: ElementRef) {

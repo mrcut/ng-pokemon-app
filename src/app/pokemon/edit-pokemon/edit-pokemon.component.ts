@@ -6,11 +6,11 @@ import { PokemonService } from "../pokemon.service";
 @Component({
   selector: "app-edit-pokemon",
   template: `
-    <h2>Editer {{ pokemon?.name }}</h2>
+    <h2 class="center">Editer {{ pokemon?.name }}</h2>
     <p *ngIf="pokemon" class="center">
       <img [src]="pokemon.picture" />
     </p>
-    <app-pokemon-form *ngIf="pokemon" [pokemon]="pokemon" ]></app-pokemon-form>
+    <app-pokemon-form *ngIf="pokemon" [pokemon]="pokemon"></app-pokemon-form>
   `,
   styles: [],
 })
@@ -23,7 +23,9 @@ export class EditPokemonComponent {
   ngOnInit() {
     const pokemonId: string | null = this.route.snapshot.paramMap.get("id");
     if (pokemonId) {
-      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+      this.pokemonService
+        .getPokemonById(+pokemonId)
+        .subscribe((pokemon) => (this.pokemon = pokemon));
     } else {
       this.pokemon = undefined;
     }
